@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity Digital SA - Digital Marketing Experts</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(to right, #F4B806, #FFC72C);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+        header img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        header h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .cta-button {
+            background-color: black;
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            transition: 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+        }
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-heading {
+            font-size: 34px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #F4B806;
+            position: relative;
+        }
+        .section-heading::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: black;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        /* Service Section */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .service {
+            padding: 25px;
+            background-color: #F4B806;
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        /* Features Section */
+        #features {
+            background-color: #FFF8E1;
+            padding: 60px 20px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .feature {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .feature h3 {
+            font-size: 24px;
+            color: #F4B806;
+        }
+        .feature p {
+            font-size: 16px;
+        }
+        /* Clients Section */
+        #clients {
+            background: linear-gradient(to right, #F4B806, #FFC72C);
+            color: white;
+            padding: 50px 20px;
+        }
+        .client-logos img {
+            max-width: 100px; /* Adjust the width as needed */
+            max-height: 100px; /* Adjust the height as needed */
+            width: auto;
+            height: auto;
+        }
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+        }
+        .testimonial {
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-left: 5px solid #F4B806;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            text-align: left;
+        }
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+        }
+        /* CEO Section */
+        #about-ceo img {
+            width: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
+            border: 3px solid #F4B806;
+        }
+        /* About Trinity Section */
+        #about-trinity {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+        }
+        /* Contact Section */
+        #contact {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        #contact form input, #contact form button, #contact form textarea, #contact form select {
+            padding: 12px;
+            margin: 10px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 25px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+        }
+        #contact form button {
+            background-color: #F4B806;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        #contact form button:hover {
+            background-color: white;
+            color: #F4B806;
+            border: 2px solid #F4B806;
+        }
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="FULL_LOGO.jpeg" alt="Trinity Digital SA Logo" loading="lazy">
+        <h1>Grow Your Brand with <span>Trinity Digital SA</span></h1>
+        <p>Expert Digital Marketing Services to Elevate Your Business</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </header>
+    <!-- About Trinity -->
+    <section id="about-trinity">
+        <h2 class="section-heading">About Trinity Digital SA</h2>
+        <p>We specialize in crafting powerful digital marketing strategies to boost brand visibility and engagement.</p>
+    </section>
+    <!-- Features Section -->
+    <section id="features">
+        <h2 class="section-heading">Our Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>Tailored Strategies</h3>
+                <p>We design personalized marketing plans that resonate with your target audience and drive meaningful results.</p>
+            </div>
+            <div class="feature">
+                <h3>Data-Driven Insights</h3>
+                <p>Our approach leverages data analytics to refine campaigns and ensure maximum ROI on your marketing budget.</p>
+            </div>
+            <div class="feature">
+                <h3>Innovative Solutions</h3>
+                <p>We constantly adapt to the latest trends and technologies, offering cutting-edge solutions for your business growth.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section id="services">
+        <h2 class="section-heading">Our Services</h2>
+        <div class="service-grid">
+            <a href="social-media-management.html" class="service">Social Media Management</a>
+            <a href="social-media-audit.html" class="service">Social Media Audit</a>
+            <a href="content-strategy.html" class="service">Content Strategy & Calendar</a>
+            <a href="seo-sem-optimization.html" class="service">SEO & SEM Optimization</a>
+                        <a href="email-marketing.html" class="service">Email Marketing Campaigns</a>
+            <a href="brand-awareness.html" class="service">Brand Awareness & Growth</a>
+            <a href="influencer-marketing.html" class="service">Influencer Marketing</a>
+            <a href="online-advertising.html" class="service">Online Advertising (Google Ads, Facebook Ads)</a>
+            <!-- New Services Added -->
+            <a href="social-media-coaching.html" class="service">1:1 Social Media Coaching</a>
+            <a href="media-kit.html" class="service">Media Kit</a>
+        </div>
+    </section>
+
+    <!-- Clients -->
+    <section id="our-clients">
+        <h2 class="section-heading">Our Clients</h2>
+        <p>We take pride in collaborating with a diverse range of clients, delivering tailored digital solutions that drive success. Below are some of the esteemed brands we've had the pleasure to work with:</p>
+        <div class="client-logos">
+            <img src="tlc.png" alt="Client 1" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="NothingToSomething.png" alt="Client 2" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="LeesKitchen.png" alt="Client 11" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="toursandshuttle.png" alt="Client 3" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="tlousegolela.png" alt="Client 4" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="Nexgen.png" alt="Client 5" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="mpisane.png" alt="Client 6" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="Lonja.png" alt="Client 7" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="Evergrow.png" alt="Client 8" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="Diyikane.png" alt="Client 9" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+            <img src="Ice.png" alt="Client 10" loading="lazy" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2 class="section-heading">Testimonials</h2>
+        <div class="testimonial">
+            <img src="Lee.jpg" alt="Lindiwe Lesunyane" loading="lazy">
+            <p><strong>Lindiwe Lesunyane</strong><br>
+            Founder: Lee’s Kitchen</p>
+            <p>"Trinity Digital's collaborative work has transformed our social media presence. Their expert advice and creative strategies have led to notable results, boosting our engagement and increasing our follower base. Highly recommended!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="Anele.jpeg" alt="Anele Sokapase" loading="lazy">
+            <p><strong>Anele Sokapase</strong><br>
+            Founder & Host: From Nothing Something Podcast</p>
+            <p>"Trinity Digital is a social media expert! Their tactics and posts have elevated our online visibility significantly. Since teaming up with them, we have experienced a notable boost in engagement and brand recognition. I highly recommend their services!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="Thandi.jpeg" alt="Thandi Leeuw" loading="lazy">
+            <p><strong>Thandi Leeuw</strong><br>
+            Founder: TLC Group</p>
+            <p>"Working with Trinity Digital has been a game-changer for our social media. Their expertise and creativity have significantly boosted our online presence. They are dedicated, innovative, and a pleasure to work with. Highly recommended!"</p>
+        </div>
+    </section>
+
+    <!-- About CEO -->
+    <section id="about-ceo">
+        <h2 class="section-heading">Meet Our CEO</h2>
+        <img src="image0_1_.jpeg" alt="CEO Photo" loading="lazy">
+        <p>Our CEO, Lesiba Tsebe, is a digital marketing expert with a passion for growth and innovation.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-heading">Contact Us</h2>
+        <form action="https://formspree.io/f/mwplprwb" method="POST">
+            <!-- Name -->
+            <input type="text" name="name" placeholder="Your Name" required>
+            <!-- Email -->
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <!-- Phone Number -->
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <!-- Service Enquiry Dropdown -->
+            <select name="service-enquiry" required>
+                <option value="" disabled selected>Select a Service</option>
+                <option value="social-media-management">Social Media Management</option>
+                <option value="social-media-audit">Social Media Audit</option>
+                <option value="content-strategy">Content Strategy & Calendar</option>
+                <option value="seo-sem-optimization">SEO & SEM Optimization</option>
+                <option value="email-marketing">Email Marketing Campaigns</option>
+                <option value="brand-awareness">Brand Awareness & Growth</option>
+                <option value="influencer-marketing">Influencer Marketing</option>
+                <option value="online-advertising">Online Advertising (Google Ads, Facebook Ads)</option>
+                <!-- New Services Added -->
+                <option value="social-media-coaching">1:1 Social Media Coaching</option>
+                <option value="media-kit">Media Kit</option>
+            </select>
+            <!-- Message -->
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <!-- Hidden Fields for Formspree -->
+            <input type="hidden" name="_subject" value="New contact form submission">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>© 2025 Trinity Digital SA</footer>
+</body>
+</html>
